@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){			
+			$("#cambiar").click(function(){
+        $("#noticias > a:last").attr("href", "http://info.html");
+    });
+		});
+		</script>
+	</head>
+	<body>
+
+		<div id="noticias">
+			<a href="http://www.google.es">Enlace</a></br>
+			<a href="http://www.google.es">Enlace</a></br>
+			<a href="http://www.google.es">Enlace</a></br>
+			<a href="http://www.google.es">Enlace</a></br>
+		</div>
+		
+		<button id="cambiar">Cambiar href</button>
+		
+	</body>
+</html>

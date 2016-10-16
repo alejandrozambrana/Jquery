@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){			
+			$('button[name=cancelar]').click(function(){
+				$("form[name=miformulario] > input[name=mes]").attr("required", "required");
+				$("form[name=miformulario] > input[name=mes]").attr("min", "1");
+				$("form[name=miformulario] > input[name=mes]").attr("max", "12");
+			});
+		});
+		</script>
+		<style>
+		.aceptar{
+			width:250px;
+			height:150px;
+			background-color:red;
+			text-align:center;
+		}
+		
+		</style>
+	</head>
+	<body>
+
+		<form name="miformulario" class="aceptar">
+			mes</br> 
+			<input type="number" name="mes"><br>
+			</br><button name="cancelar">Aceptar</button>
+		</form>
+		
+		
+	</body>
+</html><!--16. Poner al campo mes del formulario miformulario la validacion de que es requerido y que tenga valores comprendidos entre 1 y 12-->

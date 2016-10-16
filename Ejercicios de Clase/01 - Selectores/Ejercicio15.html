@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){			
+			$('button[name=cancelar]').click(function(){
+        $("div[name=miformulario]").removeClass("aceptar");
+				
+			});
+		});
+		</script>
+		<style>
+		.aceptar{
+			width:250px;
+			height:150px;
+			background-color:red;
+			text-align:center;
+		}
+		
+		</style>
+	</head>
+	<body>
+
+		<div name="miformulario" class="aceptar">
+			Usuario</br> 
+			<input type="text" name="Usuario" placeholder="Francis_killo"><br>
+			Contrasena</br> 
+			<input type="Password" name="Contraseña" ><br>
+			</br><button name="cancelar">Aceptar</button>
+		</div>
+		
+		
+	</body>
+</html><!--15. Al hacer click sobre el botón con name“cancelar” del formulario “miformulario” quitar la clase de estilo “aceptar” al formulario.-->

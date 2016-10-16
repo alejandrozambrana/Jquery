@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("p > #misdatos").hide(function(){
+			});
+			
+			$("#hobby").click(function(){
+				$("p > #misdatos").show();
+			});
+		});
+		</script>
+	</head>
+	<body>
+
+		<p>hasta luego: <input type="checkbox" id="misdatos" name="nombre"></p>
+		<p>adios: <input type="checkbox" id="myformulario" name="nombre"></p>
+		<p>hola: <input type="checkbox" id="misdatos" name="nombre"></p>
+		<p>buenas: <input type="checkbox" id="myformulario" name="nombre"></p>
+
+		<button id="hobby">mostrar</button>
+	</body>
+</html>

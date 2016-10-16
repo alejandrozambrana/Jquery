@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){			
+			$('button[name=aceptar]').click(function(){
+        $("div[name=miformulario]").addClass("aceptar");
+				
+			});
+		});
+		</script>
+		<style>
+		.aceptar{
+			width:250px;
+			height:150px;
+			background-color:red;
+			text-align:center;
+		}
+		
+		</style>
+	</head>
+	<body>
+
+		<div name="miformulario">
+			Usuario</br> 
+			<input type="text" name="Usuario" placeholder="Francis_killo"><br>
+			Contrasena</br> 
+			<input type="Password" name="Contraseña" ><br>
+			</br><button name="aceptar">Aceptar</button>
+		</div>
+		
+		
+	</body>
+</html><!--14. Al hacer click sobre el boton con name “aceptar“ del formulario “miformulario” añadir la clase de estilo “aceptar” al formulario-->

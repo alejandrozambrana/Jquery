@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){			
+			$("#alumno_3").show(function(){
+				$("#enlace").text($("#alumno_3").attr("href"));
+			});
+		});
+		</script>
+	</head>
+	<body>
+
+		<a id="alumno_3" href="http://www.iescampanillas.es">Alumno 3</a>
+
+		<div id="enlace"></div>
+
+	</body>
+</html>
