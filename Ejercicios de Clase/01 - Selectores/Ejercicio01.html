@@ -4,15 +4,15 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script>
 		$(document).ready(function(){
-			$("#myformulario").focus(function(){
+			$("#myformulario :input[name='nombre']").focus(function(){
 				$(this).css("background-color", "#99ff99");
 			});
 		});
 		</script>
 	</head>
 	<body>
-
-		<p>Name: <input type="text" id="myformulario" name="nombre"></p>
-
+		<form id="myformulario">
+			<p>Name: <input type="text"  name="nombre"></p>
+		</form>
 	</body>
 </html>

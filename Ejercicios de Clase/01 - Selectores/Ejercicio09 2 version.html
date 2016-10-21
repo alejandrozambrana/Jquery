@@ -5,9 +5,7 @@
 		<script>
 		$(document).ready(function(){			
 			$("tr:odd td").mouseenter(function(){
-        $(this).text(function(i, origText){
-				return origText + "(*)";
-				});
+        $(this).append("*");
 			});
 		});
 		</script>

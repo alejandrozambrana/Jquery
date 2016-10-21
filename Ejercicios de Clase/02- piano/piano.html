@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Piano</title>
+		<script src="jquery.min.js"></script>
+		<script src="jquery.color-2.1.2.min.js"></script>
+		<script>
+		$(document).ready(function(){			
+    	
+			//cambia el tamaño de los div cuando pasa el raton por encima.
+    	$("div.teclas").hover(function(){
+        $(this).animate({ 
+        				width: '200px',
+        				height: '200px',
+        				opacity: '0.5'
+        });
+    	},
+    	function(){
+        $(this).animate({ 
+        				width: '150px',
+        				height: '150px',
+        				opacity: '1'
+        });
+    	});
+    	
+    	//pliega y despliega los div
+    	$("button#plegar").click(function(){
+    		$("div.teclas").slideToggle("slow");
+
+    		var valuePlegar = $("button#plegar").val();
+
+    		if( valuePlegar == "plegar"){ //si el value es igual a plegar pone el boton a desplegar y cambia el value a desplegar y sino lo contrario
+    			$("button#plegar").text('Desplegar');
+    			$("button#plegar").attr("value", "desplegar"); 
+    		}else{
+    			$("button#plegar").text('Plegar');
+    			$("button#plegar").attr("value", "plegar"); 
+    		}   		
+    	});
+    	
+    	//muestra el contenido de los div en un "p" uno detras de otro sin borrar el anterior
+    	$("div.teclas").mouseenter(function(){
+    		$("p#notas").append($(this).text() + " "); //concatena las notas
+    	});
+
+    	//obtiene el valor del select y oculta el div de esa nota
+    	$("button#quitarPoner").click(function(){
+				  var valueSelect = $("select").val(); //saca del select la nota selecionada y la mete en una variable.
+				  var notas = [ "do", "re", "mi", "fa", "sol", "la", "si" ];
+				  for(var i = 0; i < 7 ; i++){
+				  	if( notas[i] == valueSelect){ //compara que la tecla selecionada sea igual a la del array
+				  		$("div.teclas[value="+valueSelect+"]").toggle(); //oculta y muestra el div selecionado.
+
+				  	}				  	
+				  }
+			});
+
+			//lo combierte en un piano
+			$("button#piano").click(function(){
+        $("div:odd").toggleClass("pares");				
+        $("div:even").toggleClass("impares");
+    	});
+
+		});
+		</script>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+
+			div.teclas{
+				width: 150px;
+				height: 150px;
+				float: left;
+				border: 1px solid black;
+				margin: 0px;
+			}
+
+			.n1{
+				background-color: red;
+			}
+
+			.n2{
+				background-color: orange;
+			}
+
+			.n3{
+				background-color: yellow;
+			}
+
+			.n4{
+				background-color: green;
+			}
+
+			.n5{
+				background-color: blue;
+			}
+
+			.n6{
+				background-color: pink;
+			}
+
+			.n7{
+				background-color: purple;
+			}
+
+			div#funciones{
+				position: absolute;
+				top:220px;
+				left: 10px;
+			}
+
+			button{
+				margin-left: 10px;
+				padding: 2px;
+			}
+
+			p{
+				position: absolute;
+				top:280px;
+				left: 10px;
+			}
+			.pares{
+				background-color:white;
+			}
+			.impares{
+				background-color:black;
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+
+		<div class="teclas n1" value="do" >Do</div>
+		<div class="teclas n2" value="re" >Re</div>
+		<div class="teclas n3" value="mi" >Mi</div>
+		<div class="teclas n4" value="fa" >Fa</div>
+		<div class="teclas n5" value="sol" >Sol</div>
+		<div class="teclas n6" value="la" >La</div>
+		<div class="teclas n7" value="si" >Si</div>
+
+		<div id="funciones">
+			<select>
+			  <option value="do">Do</option>
+			  <option value="re">Re</option>
+			  <option value="mi">Mi</option>
+			  <option value="fa">Fa</option>
+			  <option value="sol">Sol</option>
+			  <option value="la">La</option>
+			  <option value="si">Si</option>
+			</select>
+	 
+	 		<button id="quitarPoner">Quitar/Poner</button>
+	 		<button id="plegar" value="plegar">Plegar</button>
+	 		<button id="piano">Piano</button>
+	 		<button>Guitarra</button>
+
+		</div>
+
+		<p id="notas"></p>
+	</body>
+</html>
