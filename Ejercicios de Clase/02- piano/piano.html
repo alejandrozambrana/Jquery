@@ -61,6 +61,20 @@
         $("div:even").toggleClass("impares");
     	});
 
+			//lo cambia a guitarra
+			$("button#guitarra").click(function(){
+				$("div:odd").toggleClass("pares");				
+        $("div:even").toggleClass("impares");
+        //aumenta el tamaño del alto con un bucle foreach aumentandole 50 px a cada uno
+				$("div.teclas:visible").each(function(i){
+					var alto = 100 + (50*i);
+					$(this).animate({
+									width:"150px",
+									height: alto + "px"},
+									"fast");
+					});
+    	});
+
 		});
 		</script>
 		<style>
@@ -155,7 +169,7 @@
 	 		<button id="quitarPoner">Quitar/Poner</button>
 	 		<button id="plegar" value="plegar">Plegar</button>
 	 		<button id="piano">Piano</button>
-	 		<button>Guitarra</button>
+	 		<button id="guitarra">Guitarra</button>
 
 		</div>
 
