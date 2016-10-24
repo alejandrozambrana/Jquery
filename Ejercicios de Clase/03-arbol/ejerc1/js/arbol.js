@@ -3,6 +3,10 @@
 $(document).ready(function () {
 
 var bolasCreadas = 0;
+var bolasEliminadas = 0;
+
+	//deshabilita el boton de mover el arbol
+	  $("#mover").attr("disabled", "true");
 
 	//lo realiza al darle al boton adornar
 	$("#adornar").click(function(){
@@ -29,10 +33,11 @@ var bolasCreadas = 0;
 
     //
  	  $("<div></div>").addClass("bolita").css({"background" : color , "left" : left + "px"})
-									 	.appendTo("#juego").animate({top: top + "px"
-										},"slow", function(){
-											$("#mover").removeAttr("disabled");
-										});
+									 	.appendTo("#juego").animate({
+									 												top: top + "px"
+																			},"slow", function(){
+																				$("#mover").removeAttr("disabled");
+																			});
 
 		bolasCreadas++;
 		$("#creadas").text(bolasCreadas);
@@ -45,20 +50,43 @@ var bolasCreadas = 0;
 		//deshabilita el boton de adornar el arbol
 	  $("#adornar").attr("disabled", "true");
 
-	  $("#arbol").animate({
-	  					 "left": "+=30px"
-	  },"fast", function(){
-	  	$("#arbol").animate({
-	  					 "left": "-=60px"
-	  	},"fast", function(){
-	  		$("#arbol").animate({
-	  					 	"left": "+=60px"
-		  	},"fast", function(){
-					$("#arbol").animate({
-										"left": "-=30px"
+	  //mueve el arbol para los lados
+	  $('#arbol').animate({"left" : "+=30px"}, 50)
+	  $('#arbol').animate({"left" : "-=60px"}, 50)
+	  $('#arbol').animate({"left" : "+=60px"}, 50)
+	  $('#arbol').animate({"left" : "-=30px"},"fast", function(){
+
+			//tira las bolas al suelo del arbol
+			$("#juego .bolita").each(function(index){
+
+				$(this).delay(50*index).animate({
+							top : "351px"
+				},"fast", function(){
+					//cuando estan en el suelo desaparecen
+					$(this).animate({
+						opacity: "0"
+					},"fast", function(){
+						
+						//aumenta el numero de bolas eliminadas
+						bolasEliminadas++;
+						$("#eliminadas").text(bolasEliminadas);
+						
+						//pone las bolas creadas a cero
+						bolasCreadas = 0;
+						$("#creadas").text(bolasCreadas);
+						
+						//elimina capa del DOM
+						$(this).remove();
+
+						//pone visible el boton de poner adorno
+						$("#adornar").removeAttr("disabled");
+
+						//deshabilita el boton de mover el arbol
+						$("#mover").attr("disabled", "true");
+
 					});
 				});
-	  	});
+			});
 	  });
 	});
 
