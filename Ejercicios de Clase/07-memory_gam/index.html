@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <title>JQuery Memory Game</title>
+        <script src="js/funciones.js"></script>
+        <style type="text/css">
+            * {
+                font-family: Arial, "Free Sans";
+            }
+
+            #boxcard {
+                margin: 0 auto;
+                width: 625px;
+                z-index: 1;
+            }
+
+            #boxcard div {
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: #d9d9d9;
+                margin: 5px;
+                padding: 5px;
+                border: 1px solid #999;
+                cursor: pointer;
+                -webkit-border-radius: .5em;
+                -moz-border-radius: .5em;
+                border-radius: .5em;
+                -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                box-shadow: 0 1px 2px rgba(0,0,0,.5);
+                z-index: 2;
+            }
+
+            #boxcard div img {
+                border: none;
+                z-index: 3;
+            }
+
+            .opacity {
+                opacity: .6;
+                filter: alpha(opacity=60);
+            }
+
+            #boxbutton {
+                text-align: center;
+                padding: 20px;
+            }
+            .link {
+                font-size: 18px;
+                color: #ffffff;
+                text-decoration: none;
+                background: #0066cc;
+                padding: 5px 10px;
+                -webkit-border-radius: .5em;
+                -moz-border-radius: .5em;
+                border-radius: .5em;
+            }
+            .link:hover {
+                background: #999;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="boxbutton">
+            <span class="link">
+                <span id="count">0</span>
+                Click
+            </span>
+            &nbsp;
+            <a href="index.html" class="link" onclick="resetGame();">Reset</a>
+        </div>
+        <div id="boxcard">
+            <div id="card1"><img src="img/01.jpg"" /></div>
+            <div id="card2"><img src="img/02.jpg"" /></div>
+            <div id="card3"><img src="img/03.jpg"" /></div>
+            <div id="card4"><img src="img/04.jpg"" /></div>
+            <div id="card5"><img src="img/05.jpg"" /></div>
+            <div id="card6"><img src="img/01.jpg"" /></div>
+            <div id="card7"><img src="img/02.jpg"" /></div>
+            <div id="card8"><img src="img/03.jpg"" /></div>
+            <div id="card9"><img src="img/04.jpg"" /></div>
+            <div id="card10"><img src="img/05.jpg"" /></div>
+        </div>
+    </body>
+</html>

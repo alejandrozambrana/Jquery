@@ -59,6 +59,7 @@ var bolasEliminadas = 0;
 			//tira las bolas al suelo del arbol
 			$("#juego .bolita").each(function(index){
 
+				//delay pone retraso ala ejecucion
 				$(this).delay(50*index).animate({
 							top : "351px"
 				},"fast", function(){

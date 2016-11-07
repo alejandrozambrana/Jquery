@@ -32,7 +32,7 @@ function juega(){
 
 			//si el hasClass devuelve false es decir no tiene la clase circulo, 
 			//pinta la clase cruz y si la tubiera pone jugado a cruz que quiere decir que jugador cruz sigue jugando  
-			if($(this).hasClass("circulo") == false){
+			if($(this).hasClass("circulo") == false && $(this).hasClass("cruz") == false){
 				$(this).addClass("cruz");
 				$("#texto").text("Juega circulos");
 				compruebaGanador(jugador);
@@ -44,7 +44,7 @@ function juega(){
 			
 			//si el hasClass devuelve false es decir no tiene la clase cruz, 
 			//pinta la clase circulo y si la tubiera pone jugado a circulo que quiere decir que jugador circulo sigue jugando  
-			if($(this).hasClass("cruz") == false){
+			if($(this).hasClass("cruz") == false && $(this).hasClass("circulo") == false){
 				$(this).addClass("circulo");
 				$("#texto").text("Juega cruz");
 				compruebaGanador(jugador);
