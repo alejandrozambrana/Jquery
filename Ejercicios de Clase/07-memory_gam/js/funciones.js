@@ -16,6 +16,12 @@ $(document).ready(function () {
 		for(var i = 1; i <= 10; i++){
 			imagenes[i] = $("#card" + i + " img").attr("src");
 		}
+		//se puede hacer con un each y te ahorras un for
+		/*$("#boxcard div img").each(function(i){
+			imagenes[i] = $("#card" + i + " img").attr("src");
+		});*/
+		
+
 
 		//saca numeros aleatorios sin que se repitan
 		do{

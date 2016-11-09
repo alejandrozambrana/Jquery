@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>stop demo</title>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <style>
+
+    *{
+      margin: 0px;
+    }
+
+    .coches{
+    	width:80px;
+    	height:80px;
+    	position:absolute;	
+    	background-repeat:no-repeat;
+    	background-image:url(imagenes/car1.png);
+    } 
+
+    #cielo{
+      position: absolute;
+      top:0px;
+    }
+
+    .semaforo{
+      background-image: url(imagenes/semaforoRojo.jpeg);
+      width: 47px;
+      height: 117px;
+      position: absolute;
+      top: 233px;
+    }
+
+    .suelo{
+      width: 1200px;
+      height: 200px;
+      background-color: grey;
+      position: absolute;
+      top:353px;
+    }
+    .pelota{
+      background-image: url(imagenes/pelota.png);
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 330px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="cielo"></div>
+  <div id="block" class="coches"></div>
+  <div class="suelo"></div>
+
+</body>
+</html>

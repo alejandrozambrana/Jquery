@@ -1,0 +1,10 @@
+sacar numeros aleatorios del tamaño de un array 
+
+	aleatorio = randomFromTo(0,array.length - 1)
+
+quita de la array del indice el sacado aleatoriamente.
+
+	array.splice(aleatorio, 1);
+
+.off(): deshabilita una funccion
+.bind(): la habilita
